@@ -1,28 +1,16 @@
-import { FormEvent, useState } from 'react';
-import { CitiesList } from './components/CitiesList/CitiesList';
-import { CitySuggest } from './components/CitySuggest/CitySuggest';
-import { City } from './models/city/city';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './pages/HomePage/HomePage.tsx';
+import { Week } from './pages/Week/Week.tsx';
+import { NotFound } from './pages/NotFound/NotFound.tsx';
 
 function App() {
-    const [selectedCity, setSelectedCity] = useState<City | null>(null);
-
-    const [cities, setCities] = useState<City[]>([]);
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (!selectedCity) return;
-
-        setCities((prevState) => [...prevState, selectedCity]);
-        setSelectedCity(null);
-    };
-
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <CitySuggest value={selectedCity} onChange={setSelectedCity} />
-                <button type="submit">Добавить</button>
-            </form>
-            <CitiesList cities={cities} />
+            <Routes>
+                <Route path="/" index element={<HomePage />} />
+                <Route path="/week" element={<Week />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </>
     );
 }

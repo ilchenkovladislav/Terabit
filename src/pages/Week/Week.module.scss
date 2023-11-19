@@ -1,0 +1,21 @@
+.week {
+  display: grid;
+  grid-template-areas: "main . . ."
+                      "main . . .";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.main {
+  grid-area: main;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.other {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+}

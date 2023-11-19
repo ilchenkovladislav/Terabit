@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.button {
+  border: 1px solid #eee;
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 50px;
+  padding: 0 30px;
+}

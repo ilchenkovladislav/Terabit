@@ -21,16 +21,20 @@ export function Suggest<T>(props: SuggestProps<T>) {
     const debouncedInputValue = useDebounce(inputValue, 1000);
 
     useEffect(() => {
-        if (!debouncedInputValue) return;
-
-        fetch(debouncedInputValue).then(setSuggestions);
-    }, [debouncedInputValue]);
+        if (value) {
+            setInputValue(nameGetter(value));
+        } else {
+            setInputValue('');
+        }
+    }, [value]);
 
     useEffect(() => {
-        if (!value) return;
-
-        setInputValue(nameGetter(value));
-    }, [value]);
+        if (debouncedInputValue) {
+            fetch(debouncedInputValue).then(setSuggestions);
+        } else {
+            setSuggestions([]);
+        }
+    }, [debouncedInputValue]);
 
     const handleChangeInputValue = (e: ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);

@@ -1,0 +1,68 @@
+.card {
+  padding: 20px;
+  border: 1px solid #eee;
+  display: grid;
+  position: relative;
+  column-gap: 20px;
+  grid-template-columns: 2fr 3fr;
+  border-radius: 5px;
+  grid-template-areas: "header header"
+                        "icon icon"
+                        "temperature description"
+                        "temperature feelsLike";
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  grid-area: header;
+}
+
+.name {
+  text-align: center;
+  margin: 0;
+}
+
+.icon {
+  grid-area: icon;
+  justify-self: center;
+  width: 100px;
+  height: 100px;
+}
+
+.temperature {
+  text-align: center;
+  font-size: 48px;
+  grid-area: temperature;
+  align-self: center;
+  justify-self: end;
+}
+
+.description {
+  grid-area: description;
+  align-self: end;
+}
+
+.feelsLike {
+  grid-area: feelsLike;
+}
+
+.favoriteBtn {
+  position: relative;
+  z-index: 1;
+}
+
+.favorite {
+  background-color: red;
+}
+
+.deleteBtn {
+  position: relative;
+  z-index: 1;
+}
+
+.link {
+  position: absolute;
+  display: block;
+  inset: (0 0 0 0);
+}

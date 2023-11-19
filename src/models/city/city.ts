@@ -7,4 +7,5 @@ export type City = {
     lon: number;
     country: string;
     state: string;
+    isFavorite?: boolean;
 };

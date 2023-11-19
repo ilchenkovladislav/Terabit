@@ -19,11 +19,10 @@ export function CitySuggest(props: CitySuggestProps) {
             value={value}
             onChange={handleSelectCity}
             fetch={(query) => api.city.getCities(query)}
-            nameGetter={(city) =>
-                city?.local_names?.['ru']
-                    ? `${city?.local_names?.['ru']}, ${city?.state}`
-                    : `${city?.name}, ${city?.state}`
-            }
+            nameGetter={(city) => {
+                const cityName = city?.local_names?.['ru'] || city.name;
+                return `${cityName}, ${city?.state || ''}`;
+            }}
         />
     );
 }
