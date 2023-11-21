@@ -1,8 +1,8 @@
 import { CityCardList } from './components/CityCardList/CityCardList';
 import { SearchBar } from './components/SearchBar/SearchBar';
+import { Container } from '@/components/Container/Container.tsx';
 
 import s from './HomePage.module.scss';
-import { Container } from '../../components/Container/Container.tsx';
 
 export const HomePage = () => {
     return (

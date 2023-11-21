@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import cls from 'classnames';
 
-import { useDebounce } from '../../hooks/useDebounce';
+import { useDebounce } from '@/hooks/useDebounce.ts';
 
 import s from './Suggest.module.scss';
 

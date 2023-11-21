@@ -4,11 +4,11 @@ import { IoMdClose } from 'react-icons/io';
 import { FaRegHeart } from 'react-icons/fa';
 import cls from 'classnames';
 
-import { api } from '../../../../services/api.tsx';
+import { api } from '@/services/api.tsx';
 
-import { Loader } from '../../../../components/Loader/Loader.tsx';
-import type { City } from '../../../../models/city/city.ts';
-import type { Weather } from '../../../../models/weather/weather.ts';
+import { Loader } from '@/components/Loader/Loader.tsx';
+import type { City } from '@/models/city/city.ts';
+import type { Weather } from '@/models/weather/weather.ts';
 
 import s from './CityCard.module.scss';
 

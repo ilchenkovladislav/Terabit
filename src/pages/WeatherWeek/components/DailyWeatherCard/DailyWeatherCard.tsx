@@ -1,7 +1,7 @@
 import cls from 'classnames';
 
-import { formatDate } from '../../../../utilities/dateUtility.ts';
-import type { Weather } from '../../../../models/weather/weather.ts';
+import { formatDate } from '@/utilities/dateUtility.ts';
+import type { Weather } from '@/models/weather/weather.ts';
 
 import s from './DailyWeatherCard.module.scss';
 

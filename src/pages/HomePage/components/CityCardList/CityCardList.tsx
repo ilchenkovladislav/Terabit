@@ -1,10 +1,7 @@
 import cls from 'classnames';
 
-import {
-    useActionCreators,
-    useStateSelector,
-} from '../../../../store/hooks.ts';
-import { cityActions } from '../../../../store/slices/citySlice.ts';
+import { useActionCreators, useStateSelector } from '@/store/hooks.ts';
+import { cityActions } from '@/store/slices/citySlice.ts';
 
 import { CityCard } from '../CityCard/CityCard.tsx';
 import s from './CityCardList.module.scss';

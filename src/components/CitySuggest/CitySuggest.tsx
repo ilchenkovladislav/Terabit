@@ -1,6 +1,6 @@
-import { Suggest } from '../Suggest/Suggest';
-import { api } from '../../services/api';
-import type { City } from '../../models/city/city';
+import { Suggest } from '@/components/Suggest/Suggest.tsx';
+import { api } from '@/services/api.tsx';
+import type { City } from '@/models/city/city.ts';
 
 type CitySuggestProps = {
     value: City | null;

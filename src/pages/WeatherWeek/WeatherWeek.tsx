@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { FaChevronLeft } from 'react-icons/fa';
 
-import { api } from '../../services/api';
-import { filterDates } from '../../utilities/dateUtility';
+import { api } from '@/services/api.tsx';
+import { filterDates } from '@/utilities/dateUtility.ts';
 
-import type { City } from '../../models/city/city';
-import type { Weather } from '../../models/weather/weather';
+import type { City } from '@/models/city/city.ts';
+import type { Weather } from '@/models/weather/weather.ts';
 
-import { Loader } from '../../components/Loader/Loader';
+import { Loader } from '@/components/Loader/Loader.tsx';
 import { TodayWeatherCard } from './components/TodayWeatherCard/TodayWeatherCard';
 import { DailyWeatherCard } from './components/DailyWeatherCard/DailyWeatherCard';
 
 import s from './WeatherWeek.module.scss';
-import { Container } from '../../components/Container/Container.tsx';
+import { Container } from '@/components/Container/Container.tsx';
 
 export const WeatherWeek = () => {
     const [searchParams] = useSearchParams();

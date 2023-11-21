@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { useActionCreators, useStateSelector } from './store/hooks';
-import { getStoredCities } from './utilities/localStorageUtility';
+import { getStoredCities } from './utilities/localStorageUtility/localStorageUtility.ts';
 import { cityActions } from './store/slices/citySlice';
 
 import { HomePage } from './pages/HomePage/HomePage';

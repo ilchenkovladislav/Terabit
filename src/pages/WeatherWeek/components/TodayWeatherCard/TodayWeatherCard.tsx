@@ -4,12 +4,12 @@ import { FiWind } from 'react-icons/fi';
 import { IoWaterOutline } from 'react-icons/io5';
 import { RiCompass2Line } from 'react-icons/ri';
 
-import { formatDate } from '../../../../utilities/dateUtility.ts';
+import { formatDate } from '@/utilities/dateUtility.ts';
 import {
     degreesToDirection,
     hPaToMmHg,
-} from '../../../../utilities/weatherUtility.ts';
-import type { Weather } from '../../../../models/weather/weather.ts';
+} from '@/utilities/weatherUtility/weatherUtility.ts';
+import type { Weather } from '@/models/weather/weather.ts';
 
 import s from './TodayWeatherCard.module.scss';
 

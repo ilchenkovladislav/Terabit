@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { City } from '../../models/city/city.ts';
+import { City } from '@/models/city/city.ts';
 import { startAppListening } from '../types.ts';
 import {
     deleteStoredCity,
     storeCity,
-} from '../../utilities/localStorageUtility.ts';
+} from '@/utilities/localStorageUtility/localStorageUtility.ts';
 
 interface CityState {
     items: City[];

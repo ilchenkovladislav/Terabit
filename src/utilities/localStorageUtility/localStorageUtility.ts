@@ -1,4 +1,4 @@
-import { City } from '../models/city/city.ts';
+import { City } from '@/models/city/city.ts';
 
 const STORAGE_KEY_FAVORITE = 'favoriteCities';
 
