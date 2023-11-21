@@ -1,0 +1,31 @@
+.dailyWeatherCard {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: "title title"
+                        "icon temperature"
+                        "icon description"
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  grid-area: title;
+}
+
+.icon {
+  grid-area: icon;
+}
+
+.temperature {
+  grid-area: temperature;
+  align-self: end;
+  font-size: 32px;
+}
+
+.description {
+  grid-area: description;
+}

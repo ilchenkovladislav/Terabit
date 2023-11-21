@@ -1,0 +1,9 @@
+.citiesList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}

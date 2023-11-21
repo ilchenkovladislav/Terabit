@@ -1,22 +1,26 @@
 import axios from 'axios';
 import { City } from '../models/city/city';
 
-const city_api_url = 'https://api.openweathermap.org/geo/1.0/direct';
-const city_reverse_api_url = 'https://api.openweathermap.org/geo/1.0/reverse';
+const CITY_API_URL = 'https://api.openweathermap.org/geo/1.0/direct';
+const CITY_REVERSE_API_URL = 'https://api.openweathermap.org/geo/1.0/reverse';
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 export class CityService {
-    async getCities(query: string): Promise<City[]> {
-        const res = await axios.get(city_api_url, {
-            params: { q: query, limit: 5, appid: API_KEY },
+    private async fetchFromAPI(url: string, params: object): Promise<City[]> {
+        const response = await axios.get(url, {
+            params: { ...params, appid: API_KEY },
         });
-        return await res.data;
+        return response.data;
     }
 
-    async getCityByCoords(lat: number, lon: number) {
-        const res = await axios.get(city_reverse_api_url, {
-            params: { lat, lon, appid: API_KEY },
-        });
-        return await res.data;
+    public async getCitiesByName(query: string): Promise<City[]> {
+        return this.fetchFromAPI(CITY_API_URL, { q: query, limit: 5 });
+    }
+
+    public async getCityByCoordinates(
+        lat: number,
+        lon: number,
+    ): Promise<City[]> {
+        return this.fetchFromAPI(CITY_REVERSE_API_URL, { lat, lon });
     }
 }

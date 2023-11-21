@@ -3,7 +3,7 @@ type Coord = {
     lat: number;
 };
 
-type Weather = {
+type WeatherInner = {
     id: number;
     main: string;
     description: string;
@@ -38,9 +38,9 @@ type Sys = {
     sunset: number;
 };
 
-export type CurrentWeather = {
+export type Weather = {
     coord: Coord;
-    weather: Weather[];
+    weather: WeatherInner[];
     base: string;
     main: Main;
     visibility: number;

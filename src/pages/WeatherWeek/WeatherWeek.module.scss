@@ -1,0 +1,46 @@
+.week {
+  padding: 100px 0;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+
+  @media (width > 1000px) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-content: center;
+  }
+}
+
+.dailyCards {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.today {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.backlink {
+  text-decoration: none;
+  color: #000;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: text-decoration .5s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  svg {
+    font-size: 26px;
+  }
+}

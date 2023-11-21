@@ -1,14 +1,29 @@
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from './pages/HomePage/HomePage.tsx';
-import { Week } from './pages/Week/Week.tsx';
-import { NotFound } from './pages/NotFound/NotFound.tsx';
+
+import { useActionCreators, useStateSelector } from './store/hooks';
+import { getStoredCities } from './utilities/localStorageUtility';
+import { cityActions } from './store/slices/citySlice';
+
+import { HomePage } from './pages/HomePage/HomePage';
+import { WeatherWeek } from './pages/WeatherWeek/WeatherWeek';
+import { NotFound } from './pages/NotFound/NotFound';
 
 function App() {
+    const cityStatus = useStateSelector((state) => state.city.status);
+    const actions = useActionCreators(cityActions);
+
+    useEffect(() => {
+        if (cityStatus === 'init') {
+            actions.addStoredCities(getStoredCities());
+        }
+    }, [cityStatus]);
+
     return (
         <>
             <Routes>
                 <Route path="/" index element={<HomePage />} />
-                <Route path="/week" element={<Week />} />
+                <Route path="/week" element={<WeatherWeek />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </>

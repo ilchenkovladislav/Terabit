@@ -1,6 +1,6 @@
 import { Suggest } from '../Suggest/Suggest';
 import { api } from '../../services/api';
-import { City } from '../../models/city/city';
+import type { City } from '../../models/city/city';
 
 type CitySuggestProps = {
     value: City | null;
@@ -18,11 +18,14 @@ export function CitySuggest(props: CitySuggestProps) {
         <Suggest
             value={value}
             onChange={handleSelectCity}
-            fetch={(query) => api.city.getCities(query)}
-            nameGetter={(city) => {
-                const cityName = city?.local_names?.['ru'] || city.name;
-                return `${cityName}, ${city?.state || ''}`;
-            }}
+            fetch={(query) => api.city.getCitiesByName(query)}
+            nameGetter={getCityName}
         />
     );
 }
+
+const getCityName = (city: City) => {
+    const cityName = city?.local_names?.['ru'] || city.name;
+    const cityState = city?.state ? `, ${city?.state}` : '';
+    return `${cityName}${cityState}`;
+};

@@ -1,6 +1,8 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import cls from 'classnames';
+
 import { useDebounce } from '../../hooks/useDebounce';
+
 import s from './Suggest.module.scss';
 
 type SuggestProps<T> = {
@@ -18,7 +20,7 @@ export function Suggest<T>(props: SuggestProps<T>) {
     const [isFocus, setIsFocus] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
-    const debouncedInputValue = useDebounce(inputValue, 1000);
+    const debouncedInputValue = useDebounce(inputValue);
 
     useEffect(() => {
         if (value) {
@@ -30,7 +32,11 @@ export function Suggest<T>(props: SuggestProps<T>) {
 
     useEffect(() => {
         if (debouncedInputValue) {
-            fetch(debouncedInputValue).then(setSuggestions);
+            fetch(debouncedInputValue)
+                .then(setSuggestions)
+                .catch((e) => {
+                    console.error(e);
+                });
         } else {
             setSuggestions([]);
         }
@@ -46,7 +52,7 @@ export function Suggest<T>(props: SuggestProps<T>) {
     };
 
     return (
-        <div>
+        <div className={s.wrapper}>
             <input
                 className={cls(s.input)}
                 value={inputValue}
@@ -58,7 +64,7 @@ export function Suggest<T>(props: SuggestProps<T>) {
                 }}
                 onFocus={() => setIsFocus(true)}
             />
-            {isFocus && (
+            {isFocus && !!suggestions.length && (
                 <ul
                     className={s.suggestList}
                     onMouseEnter={() => {

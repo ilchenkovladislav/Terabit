@@ -10,6 +10,11 @@
                         "icon icon"
                         "temperature description"
                         "temperature feelsLike";
+
+  transition: box-shadow .5s;
+  &:hover {
+    box-shadow: 0 20px 30px 5px rgb(0 0 0 / 4%);
+  }
 }
 
 .header {
@@ -21,6 +26,9 @@
 .name {
   text-align: center;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .icon {
@@ -48,17 +56,56 @@
 }
 
 .favoriteBtn {
+  margin-left: auto;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  border: none;
   position: relative;
   z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color .3s, color .5s, opacity .3s;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.card:hover :is(.favoriteBtn, .deleteBtn) {
+  opacity: 1;
 }
 
 .favorite {
-  background-color: red;
+  color: red;
 }
 
 .deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  border: none;
   position: relative;
   z-index: 1;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color .3s, opacity .3s;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  
+  &:hover {
+    background-color: #eee;
+  }
 }
 
 .link {
