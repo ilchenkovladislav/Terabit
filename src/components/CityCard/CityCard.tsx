@@ -46,13 +46,16 @@ export const CityCard = (props: CityCardProps) => {
                 </h3>
                 <button
                     onClick={handleFavorite}
-                    className={cls(s.favoriteBtn, {
+                    className={cls(s.iconButton, s.favoriteButton, {
                         [s.favorite]: city.isFavorite,
                     })}
                 >
                     <FaRegHeart />
                 </button>
-                <button onClick={handleDelete} className={s.deleteBtn}>
+                <button
+                    onClick={handleDelete}
+                    className={cls(s.iconButton, s.deleteButton)}
+                >
                     <IoMdClose />
                 </button>
             </header>

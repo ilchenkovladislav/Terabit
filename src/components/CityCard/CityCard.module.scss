@@ -55,9 +55,7 @@
   grid-area: feelsLike;
 }
 
-.favoriteBtn {
-  margin-left: auto;
-  border-radius: 5px;
+.iconButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,39 +65,29 @@
   z-index: 1;
   background-color: transparent;
   cursor: pointer;
-  transition: background-color .3s, color .5s, opacity .3s;
+  transition: background-color .3s;
+  border-radius: 5px;
   width: 30px;
   height: 30px;
 
   &:hover {
     background-color: #eee;
   }
+}
+
+.favoriteButton {
+  transition: background-color .3s, color .5s;
+  margin-left: auto;
 }
 
 .favorite {
   color: red;
 }
 
-.deleteBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: inherit;
-  border: none;
-  position: relative;
-  z-index: 1;
-  background-color: transparent;
-  cursor: pointer;
-  transition: background-color .3s, opacity .3s;
+.deleteButton {
+  transition: background-color .3s;
   font-size: 20px;
-  border-radius: 5px;
   padding: 5px;
-  width: 30px;
-  height: 30px;
-
-  &:hover {
-    background-color: #eee;
-  }
 }
 
 .link {
