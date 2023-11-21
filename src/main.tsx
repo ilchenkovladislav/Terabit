@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <ErrorBoundary fallback={<p>Что-то пошло не так</p>}>
             <Provider store={store}>
-                <BrowserRouter>
+                <BrowserRouter basename="/Terabit">
                     <App />
                 </BrowserRouter>
             </Provider>
