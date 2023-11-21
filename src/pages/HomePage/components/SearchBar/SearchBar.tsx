@@ -1,11 +1,11 @@
 import { FormEvent, useState } from 'react';
 import cls from 'classnames';
 
-import { useActionCreators } from '../../store/hooks';
-import { cityActions } from '../../store/slices/citySlice';
+import { useActionCreators } from '../../../../store/hooks.ts';
+import { cityActions } from '../../../../store/slices/citySlice.ts';
 
-import { CitySuggest } from '../CitySuggest/CitySuggest';
-import type { City } from '../../models/city/city';
+import { CitySuggest } from '../../../../components/CitySuggest/CitySuggest.tsx';
+import type { City } from '../../../../models/city/city.ts';
 
 import s from './SearchBar.module.scss';
 

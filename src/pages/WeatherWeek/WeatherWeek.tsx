@@ -9,8 +9,8 @@ import type { City } from '../../models/city/city';
 import type { Weather } from '../../models/weather/weather';
 
 import { Loader } from '../../components/Loader/Loader';
-import { TodayWeatherCard } from '../../components/TodayWeatherCard/TodayWeatherCard';
-import { DailyWeatherCard } from '../../components/DailyWeatherCard/DailyWeatherCard';
+import { TodayWeatherCard } from './components/TodayWeatherCard/TodayWeatherCard';
+import { DailyWeatherCard } from './components/DailyWeatherCard/DailyWeatherCard';
 
 import s from './WeatherWeek.module.scss';
 import { Container } from '../../components/Container/Container.tsx';
